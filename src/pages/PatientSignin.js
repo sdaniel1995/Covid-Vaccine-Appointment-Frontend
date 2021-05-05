@@ -5,31 +5,28 @@ import { Link } from 'react-router-dom';
 class PatientSignin extends Component {
 
     state = {
-        employee: {
-            email: '',
-            password: '',
-            employeeTypeID: ''
+        user: {
+            username: '',
+            userpass: ''
         }
     }
 
     handleChange = (event) => {
         const value = event.target.value;
         const name = event.target.name;
-        const tempEmployee = { ...this.state.employee };
-        tempEmployee[name] = value;
+        const tempUser = { ...this.state.user };
+        tempUser[name] = value;
         this.setState({
-            employee: tempEmployee
+            user: tempUser
         });
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:8080/employeeLogin', this.state.employee)
+        axios.post('http://localhost:8080/Login', this.state.user)
         .then(response => {
-            console.log('logging in user');
-            localStorage.setItem("employee", response.data.email);
-            localStorage.setItem("type", response.data.employeeTypeID);
-            console.log(response.data.employeeTypeID);
+            localStorage.setItem("userid", response.data.userid);
+            localStorage.setItem("usertype", response.data.usertype);
             alert('Login successfull');
             this.props.history.push('main');            
         })
@@ -44,12 +41,12 @@ class PatientSignin extends Component {
             <div className="container">
                 <form onSubmit={this.handleSubmit}>
                     <div className="mb-3 col-md-4">
-                        <label htmlFor="email" className="form-label">Email address:</label>
-                        <input onChange={this.handleChange} value={this.state.employee.email} type="email" className="form-control" name="email" id="email" />
+                        <label htmlFor="email" className="form-label">Username:</label>
+                        <input onChange={this.handleChange} value={this.state.employee.username} type="text" className="form-control" name="email" id="email" />
                     </div>
                     <div className="mb-3 col-md-4">
                         <label htmlFor="password" className="form-label">Password:</label>
-                        <input onChange={this.handleChange} value={this.state.employee.password} type="password" className="form-control" name="password" id="password" />
+                        <input onChange={this.handleChange} value={this.state.employee.userpass} type="password" className="form-control" name="userpass" id="userpass" />
                     </div>
                     <div className="mb-3 col-md-4">
                         <button type="submit" className="btn btn-primary">Submit</button>
