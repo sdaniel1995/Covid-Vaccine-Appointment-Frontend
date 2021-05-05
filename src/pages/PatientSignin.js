@@ -26,10 +26,10 @@ class PatientSignin extends Component {
         console.log(this.state.user)
         axios.post('http://localhost:8081/api/patientLogin', this.state.user)
         .then(response => {
-            localStorage.setItem("userId", response.data.id);
+            localStorage.setItem("patientId", response.data.id);
             alert('Login successfull');
             console.log(response.data);
-            this.props.history.push('main');
+            this.props.history.push('PatientProfile');
         })
         .catch(error => {
             alert('failed to log in');

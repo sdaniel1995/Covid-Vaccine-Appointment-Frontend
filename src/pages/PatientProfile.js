@@ -13,9 +13,9 @@ class PatientProfile extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8081/api/appointments')
+        axios.get('http://localhost:8081/api/appointments/patient/'+localStorage.getItem('patientId'))
         .then(resp => {
-            // console.log(resp.data)
+            console.log(resp.data)
             this.setState({appts: resp.data});
             // console.log(appts)
         })
@@ -28,12 +28,6 @@ class PatientProfile extends Component {
         const { appts } = this.state; 
 
         return (
-            // <div className="container">
-            //     <h1>Welcome!</h1>
-            //     <p>Please see below to request an appointment for a vaccine</p>
-
-            //     <Link to="/" className="btn btn-primary">Main</Link>
-            // </div>
             <div>
                 <h1>PATIENT HUB</h1>
                 <br></br>
@@ -42,6 +36,7 @@ class PatientProfile extends Component {
                     <thead>
                         <tr>
                             <td>Appointment Date</td>
+                            <td>Appointment Time</td>
                             <td>Distributor Name</td>
                             <td>Distributor Address</td>
                             <td>Zipcode</td>
@@ -57,6 +52,7 @@ class PatientProfile extends Component {
                             // <div>{appt.id}  {appt.date} {appt.distributor.distributorName} {appt.patient.fname}</div>
                                 <tr key ={appt.id}> 
                                     <td>{appt.date}</td>
+                                    <td>{appt.time}</td>
                                     <td>{appt.distributor.distributorName}</td>
                                     <td>{appt.distributor.address}</td>
                                     <td>{appt.distributor.zipcode}</td>
@@ -70,37 +66,8 @@ class PatientProfile extends Component {
 
                 <br></br>
 
-                <h2>Available Appointments</h2>
-                <table className= "table table-striped">
-                    <thead>
-                        <tr>
-                            <td>Appointment Date</td>
-                            <td>Distributor Name</td>
-                            <td>Distributor Address</td>
-                            <td>Zipcode</td>
-                            <td> </td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            appts.length ?
-                            appts.map( appt => 
-
-                            // <h1>appts list</h1>
-                            // <div>{appt.id}  {appt.date} {appt.distributor.distributorName} {appt.patient.fname}</div>
-                                <tr key ={appt.id}> 
-                                    <td>{appt.date}</td>
-                                    <td>{appt.distributor.distributorName}</td>
-                                    <td>{appt.distributor.address}</td>
-                                    <td>{appt.distributor.zipcode}</td>
-                                    <td><button className="btn btn-primary m-2">Select</button></td>
-                                </tr>
-                            )
-                            :null
-                        }
-                    </tbody>
-                </table>
-                <Link to="/" className="btn btn-primary">Main</Link>
+               
+                <Link to="/FindAppointment" className="btn btn-primary">Find Appointment</Link>
             </div>
 
         );

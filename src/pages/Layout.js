@@ -11,6 +11,7 @@ import Requests from './Requests';
 import DistributorSignin from './DistributorSignin'
 import DistributorDashboard from './DistributorDashboard'
 import createAppointment from './createAppointment'
+import FindAppointment from './FindAppointment'
 
 class Layout extends Component {
     render() {
@@ -36,6 +37,8 @@ class Layout extends Component {
                     <Route path="/requests" component={Requests} />
                     <Route path="/DistributorDashboard" component={DistributorDashboard} />
                     <Route path="/createAppointment" component={createAppointment} />
+                    <Route path="/PatientProfile" component={PatientProfile} />
+                    <Route path="/FindAppointment" component={FindAppointment} />
                 </div>
             </div>
         );
