@@ -28,28 +28,30 @@ class PatientProfile extends Component {
         const { appts } = this.state; 
 
         return (
-            <div>
-                <h1>PATIENT HUB</h1>
-                <br></br>
-                <h2>My Appointments</h2>
-                <table className= "table table-striped">
-                    <thead>
+            <div className="card border-dark text-center">
+                <div className="card-header">
+                    <h1>PATIENT HUB</h1>
+                </div>
+                
+                <div className="card-body">
+                <div className="card-title">
+                    <h2>My Appointments</h2>
+                </div>
+                <table className= "table table-hover table-striped">
+                    <thead className="thead-light">
                         <tr>
-                            <td>Appointment Date</td>
-                            <td>Appointment Time</td>
-                            <td>Distributor Name</td>
-                            <td>Distributor Address</td>
-                            <td>Zipcode</td>
-                            <td> </td>
+                            <th>Appointment Date</th>
+                            <th>Appointment Time</th>
+                            <th>Distributor Name</th>
+                            <th>Distributor Address</th>
+                            <th>Zipcode</th>
+                            <th> </th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             appts.length ?
                             appts.map( appt => 
-
-                            // <h1>appts list</h1>
-                            // <div>{appt.id}  {appt.date} {appt.distributor.distributorName} {appt.patient.fname}</div>
                                 <tr key ={appt.id}> 
                                     <td>{appt.date}</td>
                                     <td>{appt.time}</td>
@@ -63,11 +65,15 @@ class PatientProfile extends Component {
                         }
                     </tbody>
                 </table>
-
+                </div>
+                
+                <div className="card-footer">
+                <Link to="/FindAppointment" className="btn-lg btn-primary">Find Appointment</Link>
+                </div>
+                
                 <br></br>
 
                
-                <Link to="/FindAppointment" className="btn btn-primary">Find Appointment</Link>
             </div>
 
         );
