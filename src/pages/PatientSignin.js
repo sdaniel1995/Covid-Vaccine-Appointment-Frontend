@@ -28,7 +28,7 @@ class PatientSignin extends Component {
             localStorage.setItem("userid", response.data.userid);
             localStorage.setItem("usertype", response.data.usertype);
             alert('Login successfull');
-            this.props.history.push('main');            
+            this.props.history.push('main');
         })
         .catch(error => {
             alert('failed to log in');
