@@ -12,7 +12,7 @@ class Home extends Component {
                 <Link to="/patientsignin" className="btn btn-primary m-2">Patient Signin</Link>
                 <Link to="/portal" className="btn btn-primary m-2">Portal</Link>
                 <Link to="/tasks" className="btn btn-primary m-2">Tasks</Link>     
-                <Link to="/ghud" className="btn btn-primary m-2">ghuD Stuff</Link>     
+                <Link to="/ghud" className="btn btn-primary m-2">ghuD Stuff</Link>  
             </div>
         );
     }

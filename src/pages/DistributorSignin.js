@@ -29,7 +29,7 @@ class DistributorSignin extends Component {
             localStorage.setItem("distId", response.data.distributorId);
             alert('Login successfull');
             console.log(response.data);
-            this.props.history.push('main');
+            this.props.history.push('DistributorDashBoard');
         })
         .catch(error => {
             alert('failed to log in');

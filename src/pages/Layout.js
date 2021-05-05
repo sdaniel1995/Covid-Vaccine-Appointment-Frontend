@@ -9,6 +9,8 @@ import Header from './Header';
 import Home from './Home';
 import Requests from './Requests';
 import DistributorSignin from './DistributorSignin'
+import DistributorDashboard from './DistributorDashboard'
+import createAppointment from './createAppointment'
 
 class Layout extends Component {
     render() {
@@ -32,6 +34,8 @@ class Layout extends Component {
                     <Route path="/dash" component={Dashboard} />
                     <Route path="/dashconfig" component={DashboardConfig} />
                     <Route path="/requests" component={Requests} />
+                    <Route path="/DistributorDashboard" component={DistributorDashboard} />
+                    <Route path="/createAppointment" component={createAppointment} />
                 </div>
             </div>
         );
