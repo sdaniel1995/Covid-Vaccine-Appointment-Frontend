@@ -8,6 +8,7 @@ import DashboardConfig from './DashboardConfig';
 import Header from './Header';
 import Home from './Home';
 import Requests from './Requests';
+import DistributorSignin from './DistributorSignin'
 
 class Layout extends Component {
     render() {
@@ -25,7 +26,8 @@ class Layout extends Component {
                     <Route exact path="/" component={Home} />
                     <Route path="/main" component={Home} />
                     <Route path="/registration" component={PatientRegistration} />
-                    <Route path="/signin" component={PatientSignin} />
+                    <Route path="/distsignin" component={DistributorSignin} />
+                    <Route path="/patientsignin" component={PatientSignin} />
                     <Route path="/portal" component={PatientProfile} />
                     <Route path="/dash" component={Dashboard} />
                     <Route path="/dashconfig" component={DashboardConfig} />

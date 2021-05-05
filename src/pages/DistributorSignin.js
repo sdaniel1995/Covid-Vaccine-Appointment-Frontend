@@ -2,11 +2,11 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-class PatientSignin extends Component {
+class DistributorSignin extends Component {
 
     state = {
         user: {
-            username: '',
+            distributorName: '',
             pass: '',
         }
     }
@@ -24,9 +24,9 @@ class PatientSignin extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         console.log(this.state.user)
-        axios.post('http://localhost:8081/api/patientLogin', this.state.user)
+        axios.post('http://localhost:8081/api/distributorLogin', this.state.user)
         .then(response => {
-            localStorage.setItem("userId", response.data.id);
+            localStorage.setItem("distId", response.data.distributorId);
             alert('Login successfull');
             console.log(response.data);
             this.props.history.push('main');
@@ -40,10 +40,11 @@ class PatientSignin extends Component {
     render() {
         return (
             <div className="container">
+                 <h1>Welcome to Distributor Page</h1>
                 <form onSubmit={this.handleSubmit}>
                     <div className="mb-3 col-md-4">
                         <label htmlFor="email" className="form-label">Username:</label>
-                        <input onChange={this.handleChange} value={this.state.user.username} type="text" className="form-control" name="username" id="username" />
+                        <input onChange={this.handleChange} value={this.state.user.distributorName} type="text" className="form-control" name="distributorName" id="username" />
                     </div>
                     <div className="mb-3 col-md-4">
                         <label htmlFor="password" className="form-label">Password:</label>
@@ -59,4 +60,4 @@ class PatientSignin extends Component {
     }
 }
 
-export default PatientSignin;
+export default DistributorSignin;
