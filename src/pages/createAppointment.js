@@ -52,7 +52,7 @@ class createAppointment extends Component {
             // localStorage.setItem("type", response.data.employeeTypeID);
             // console.log(response.data.employeeTypeID);
             alert('Post new appointment successfull');
-            this.props.history.push('main');            
+            this.props.history.push('DistributorDashboard');            
         })
         .catch(error => {
             alert('failed to do shit');

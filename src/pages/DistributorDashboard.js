@@ -18,7 +18,7 @@ class DistributorDashboard extends Component {
 // Grab the data from REST API and store in variable 'users'
 // Called immediately after a componenty is mounted
 componentDidMount(){
-    axios.get('http://localhost:8081/api/appointments/distributor/1')
+    axios.get('http://localhost:8081/api/appointments/distributor/'+localStorage.getItem('distId'))
     .then(resp => {
        // console.log(resp.data);
         this.setState({appointments:resp.data})

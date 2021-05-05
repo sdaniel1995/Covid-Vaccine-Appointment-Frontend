@@ -6,7 +6,6 @@ class Home extends Component {
         return (
             <div className="container">
                 <h1>Home Page</h1>
-                <p>skeletal settup for the home page</p>
                 <Link to="/registration" className="btn btn-primary m-2">Register</Link>
                 <Link to="/distsignin" className="btn btn-primary m-2">Distributor Signin</Link>
                 <Link to="/patientsignin" className="btn btn-primary m-2">Patient Signin</Link>
