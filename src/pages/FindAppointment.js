@@ -53,6 +53,20 @@ class FindAppointment extends Component {
       })
   }
 
+  handleRecent = (event) => {
+    event.preventDefault();
+    console.log("Clicked find")
+    axios.get('http://localhost:8081/api/appointments/recent')
+    .then(response => {
+       this.setState({appts:response.data})
+       console.log(response.data);
+    })
+    .catch(error => {
+        alert('failed to log in');
+        //display error message
+    })
+  }
+
   render() {
     const { appts } = this.state;
 
@@ -72,8 +86,14 @@ class FindAppointment extends Component {
               </div>
             <div className="card-footer">
               <button type="submit" className="btn btn-sm btn-success">Get Appointments</button>
+              <form onSubmit={this.handleRecent}>
+                <div className="py-2">
+                    <button type="submit" className="btn btn-sm btn-primary">Find next available appointment</button>
+                </div>
+              </form>
             </div>
           </form>
+          
           </div>
         
         <div className="card border-dark text-center mx-5">

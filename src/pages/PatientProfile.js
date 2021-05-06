@@ -33,7 +33,7 @@ class PatientProfile extends Component {
     axios.post('http://localhost:8081/api/appointments/cancel', twoNumbers)
       .then(response => {
         alert("Appointment Successfully Cancelled ");
-        this.props.history.push('PatientProfile');
+        this.componentDidMount();
       })
       .catch(error => {
         alert('failed to log in');
@@ -89,7 +89,9 @@ class PatientProfile extends Component {
       </div>
       
       <div className="card-footer">
-      <Link to="/FindAppointment" className="btn-lg btn-success">Find Appointment</Link>
+        <div className="py-3">
+        <Link to="/FindAppointment" className="btn-lg btn-success">Find Appointment</Link>
+        </div>
       </div>
       </div>
       </div>
