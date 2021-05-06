@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import '../css/PatientRegistration.css'
 
 class PatientRegistration extends Component {
 
@@ -44,10 +45,9 @@ class PatientRegistration extends Component {
 
   render() {
     return (
-      <div className="container" id="registration">
-        <h1>Registration Form</h1>
-        <br />
-        <form onSubmit={this.handleSubmit} className="needs-validation" id="registration-form" noValidate>
+      <div id="pat-registration">
+        <form onSubmit={this.handleSubmit} className="needs-validation" id="pat-registration-form" noValidate>
+        <h1 style={{marginBottom: '60px'}}>Patient Registration Form</h1>
           <div className="mb-3 col-md-4">
             <label htmlFor="firstName" className="form-label">First name: </label>
             <input onChange={this.handleChange} value={this.state.patient.fname} type="text" className="form-control" id="fname" name="fname" required />
@@ -97,22 +97,11 @@ class PatientRegistration extends Component {
               Please provide a valid password.
             </div>
           </div>
-          <div className="mb-3 col-4">
-            <div className="form-check">
-              <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required />
-              <label className="form-check-label" htmlFor="invalidCheck">
-                Agree to terms and conditions
-              </label>
-              <div className="invalid-feedback">
-                You must agree before submitting.
-              </div>
-            </div>
-          </div>
           <div className="mb-3 col-12">
-            <button className="btn btn-primary" type="submit">Submit form</button>
+            <button className="btn btn-primary" type="submit" style={{marginRight: '30px'}}>Submit form</button>
+            <Link to="/" className="btn btn-primary" style={{marginRight: '30px'}}>Main</Link>
           </div>
         </form>
-        <Link to="/" className="btn btn-primary">Main</Link>
       </div>
     );
   }
