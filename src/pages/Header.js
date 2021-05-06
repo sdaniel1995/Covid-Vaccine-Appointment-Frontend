@@ -39,7 +39,6 @@ class Header extends Component {
           <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li><Link onClick={this.signOut} className="nav-link px-2 link-dark"><h3>Sign out</h3></Link></li>
-              <li><Link to="/requests" className="nav-link px-2 link-dark"><h3>Requests</h3></Link></li>
             </ul>
           </div>
         </header>

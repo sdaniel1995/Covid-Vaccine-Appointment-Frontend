@@ -13,6 +13,7 @@ class CreateAppointment extends Component {
     }
   }
 
+
   componentDidMount() {
     axios.get('http://localhost:8081/api/distributor/' + localStorage.getItem('distId'))
       .then(resp => {
@@ -74,7 +75,7 @@ class CreateAppointment extends Component {
             <button type="submit" className="btn btn-primary">Submit</button>
           </div>
         </form>
-        <Link to="/" className="btn btn-primary">Main</Link>
+        {/* <Link to="/" className="btn btn-primary">Main</Link> */}
       </div>
     );
   }

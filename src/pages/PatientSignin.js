@@ -40,20 +40,30 @@ class PatientSignin extends Component {
   render() {
     return (
       <div className="container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="mb-3 col-md-4">
-            <label htmlFor="email" className="form-label">Username:</label>
-            <input onChange={this.handleChange} value={this.state.user.username} type="text" className="form-control" name="username" id="username" />
+        <div className="card text-center">
+            <h1 className="card-header bg-primary text-light">Patient Login</h1>
+
+        <div className="">
+          <div className="w-50 mx-auto my-1 py-1">
+            <form className="card-body text-center" onSubmit={this.handleSubmit}>
+              <div className="py-4">
+                <label><h2>Username:</h2></label>
+                <input onChange={this.handleChange} value={this.state.user.username} type="text" className="form-control" name="username" id="username" />
+              </div>
+              <div className="py-4">
+                <label><h2>Password:</h2></label>
+                <input onChange={this.handleChange} value={this.state.user.pass} type="password" className="form-control" name="pass" id="password" />
+              </div>
+              <div className="my-5">
+                <button type="submit" className="btn btn-lg btn-success">Submit</button>
+              </div>
+            </form>
           </div>
-          <div className="mb-3 col-md-4">
-            <label htmlFor="password" className="form-label">Password:</label>
-            <input onChange={this.handleChange} value={this.state.user.pass} type="password" className="form-control" name="pass" id="password" />
-          </div>
-          <div className="mb-3 col-md-4">
-            <button type="submit" className="btn btn-primary">Submit</button>
-          </div>
-        </form>
-        <Link to="/" className="btn btn-primary">Main</Link>
+        </div>
+        <div className="card-footer">
+        <Link to="/" className="btn btn-primary">Back to Home</Link>
+        </div>
+        </div>
       </div>
     );
   }

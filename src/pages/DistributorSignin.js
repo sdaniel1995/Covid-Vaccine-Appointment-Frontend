@@ -39,22 +39,29 @@ class DistributorSignin extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h1>Welcome to Distributor Page</h1>
-        <form onSubmit={this.handleSubmit}>
-          <div className="mb-3 col-md-4">
-            <label htmlFor="email" className="form-label">Username:</label>
+      <div className="card w-50 mx-auto border-dark text-center mx-5">
+      <div className="card-header bg-primary text-light">
+      <h1>Welcome to Distributor Login</h1>
+      </div>
+
+      <div className="card-body" > 
+      <form onSubmit={this.handleSubmit}>
+          <div className="w-50 mx-auto py-4">
+            <label>Username:</label>
             <input onChange={this.handleChange} value={this.state.user.distributorName} type="text" className="form-control" name="distributorName" id="username" />
           </div>
-          <div className="mb-3 col-md-4">
-            <label htmlFor="password" className="form-label">Password:</label>
+          <div className="w-50 mx-auto py-4">
+            <label>Password:</label>
             <input onChange={this.handleChange} value={this.state.user.pass} type="password" className="form-control" name="pass" id="password" />
           </div>
-          <div className="mb-3 col-md-4">
-            <button type="submit" className="btn btn-primary">Submit</button>
+          <div className="py-4">
+            <button type="submit" className="btn btn-success">Submit</button>
           </div>
-        </form>
-        <Link to="/" className="btn btn-primary">Main</Link>
+      </form>
+      </div>
+      <div className="card-footer py-4">
+      <Link to="/" className="btn btn-primary">Back to Home</Link>
+      </div>
       </div>
     );
   }

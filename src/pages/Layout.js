@@ -36,7 +36,7 @@ class Layout extends Component {
           <Route path="/dashconfig" component={DashboardConfig} />
           <Route path="/requests" component={Requests} />
           <Route path="/DistributorDashboard" component={DistributorDashboard} />
-          <Route path="/createAppointment" component={CreateAppointment} />
+          <Route path="/CreateAppointment" component={CreateAppointment} />
           <Route path="/PatientProfile" component={PatientProfile} />
           <Route path="/FindAppointment" component={FindAppointment} />
         </div>

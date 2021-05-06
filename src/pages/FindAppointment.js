@@ -43,6 +43,8 @@ class FindAppointment extends Component {
       .then(response => {
         console.log("Put did something at least")
         console.log(this.state.appts[event.target.key]);
+        alert("Appointment Successfully Added");
+        this.props.history.push('PatientProfile');
       })
       .catch(error => {
         alert('failed to log in');
@@ -55,25 +57,34 @@ class FindAppointment extends Component {
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <div className="card border-dark text-center mx-5">
+        <form onSubmit={this.handleSubmit} className="card">
           <div className="mb-3 col-md-4">
-            <label htmlFor="zipcode" className="form-label">Zipcode:</label>
+            <div className="">
+            <label className="card-body">Zipcode:</label>
             <input placeholder='Enter Zipcode' onChange={this.handleChange} value={this.state.zipcode} type="text" className="form-control" name="zipcode" id="zipcode" />
+            </div>
           </div>
           <div className="mb-3 col-md-4">
-            <button type="submit" className="btn btn-primary">Get Appointments</button>
+            <button type="submit" className="btn btn-sm btn-success">Get Appointments</button>
           </div>
         </form>
-        <h2>Available Appointments</h2>
-        <table className="table table-striped">
+        </div>
+        
+        <div className="card border-dark text-center mx-5">
+        <div className="card-header bg-primary text-light">
+        <h1>Available Appointments</h1>
+        </div>
+        <div className="card-body">
+        <table className="table table-hover table-striped">
           <thead>
             <tr>
-              <td>Appointment Date</td>
-              <td>Appointment Time</td>
-              <td>Distributor Name</td>
-              <td>Distributor Address</td>
-              <td>Zipcode</td>
-              <td> </td>
+              <th>Appointment Date</th>
+              <th>Appointment Time</th>
+              <th>Distributor Name</th>
+              <th>Distributor Address</th>
+              <th>Zipcode</th>
+              <th> </th>
             </tr>
           </thead>
           <tbody>
@@ -89,14 +100,18 @@ class FindAppointment extends Component {
                     <td>{appt.distributor.distributorName}</td>
                     <td>{appt.distributor.address}</td>
                     <td>{appt.distributor.zipcode}</td>
-                    <td><button className="btn btn-primary m-2" name={appt.id} onClick={this.selectAppointment}>Select</button></td>
+                    <td><button className="btn btn-sm btn-primary m-2" name={appt.id} onClick={this.selectAppointment}>Select</button></td>
                   </tr>
                 )
                 : null
             }
           </tbody>
         </table>
-        <Link to="/" className="btn btn-primary">Main</Link>
+        </div>
+        <div className="card-footer">
+        <Link to="/PatientProfile" className="btn btn-primary">Patient Hub</Link>
+        </div>
+        </div>
       </div>
 
     );
