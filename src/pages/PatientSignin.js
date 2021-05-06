@@ -39,7 +39,9 @@ class PatientSignin extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div id="background" className="fixed-top">
+        <br></br>
+        <div className="container">
         <div className="card text-center">
             <h1 className="card-header bg-primary text-light">Patient Login</h1>
 
@@ -47,11 +49,11 @@ class PatientSignin extends Component {
           <div className="w-50 mx-auto my-1 py-1">
             <form className="card-body text-center" onSubmit={this.handleSubmit}>
               <div className="py-4">
-                <label><h2>Username:</h2></label>
+                <label>Username:</label>
                 <input onChange={this.handleChange} value={this.state.user.username} type="text" className="form-control" name="username" id="username" />
               </div>
               <div className="py-4">
-                <label><h2>Password:</h2></label>
+                <label>Password:</label>
                 <input onChange={this.handleChange} value={this.state.user.pass} type="password" className="form-control" name="pass" id="password" />
               </div>
               <div className="my-5">
@@ -65,6 +67,8 @@ class PatientSignin extends Component {
         </div>
         </div>
       </div>
+      </div>
+      
     );
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Header from './Header';
 
 class PatientProfile extends Component {
 
@@ -44,7 +45,11 @@ class PatientProfile extends Component {
     const { appts } = this.state;
 
     return (
-      <div className="card border-dark text-center mx-5">
+      <div id="background" className="fixed-top">
+        <div className="">
+        <Header />
+        </div>
+      <div className="card border-dark text-center">
       <div className="card-header bg-primary text-light">
           <h1>PATIENT HUB</h1>
       </div>
@@ -87,6 +92,8 @@ class PatientProfile extends Component {
       <Link to="/FindAppointment" className="btn-lg btn-success">Find Appointment</Link>
       </div>
       </div>
+      </div>
+      
 
     );
   }

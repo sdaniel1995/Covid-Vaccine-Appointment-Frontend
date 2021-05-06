@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import '../css/Background.css'
 
 class DistributorSignin extends Component {
 
@@ -39,9 +40,11 @@ class DistributorSignin extends Component {
 
   render() {
     return (
+      <div id="background" className="fixed-top">
+        <br></br>
       <div className="card w-50 mx-auto border-dark text-center mx-5">
       <div className="card-header bg-primary text-light">
-      <h1>Welcome to Distributor Login</h1>
+      <h1>Distributor Login</h1>
       </div>
 
       <div className="card-body" > 
@@ -62,7 +65,9 @@ class DistributorSignin extends Component {
       <div className="card-footer py-4">
       <Link to="/" className="btn btn-primary">Back to Home</Link>
       </div>
+      </div>  
       </div>
+      
     );
   }
 }

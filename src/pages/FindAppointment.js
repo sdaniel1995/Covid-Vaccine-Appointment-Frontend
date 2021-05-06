@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Header from './Header';
 
 class FindAppointment extends Component {
 
@@ -56,20 +57,24 @@ class FindAppointment extends Component {
     const { appts } = this.state;
 
     return (
-      <div>
-        <div className="card border-dark text-center mx-5">
-        <form onSubmit={this.handleSubmit} className="card">
-          <div className="mb-3 col-md-4">
-            <div className="">
-            <label className="card-body">Zipcode:</label>
-            <input placeholder='Enter Zipcode' onChange={this.handleChange} value={this.state.zipcode} type="text" className="form-control" name="zipcode" id="zipcode" />
-            </div>
-          </div>
-          <div className="mb-3 col-md-4">
-            <button type="submit" className="btn btn-sm btn-success">Get Appointments</button>
-          </div>
-        </form>
+      <div id="background" className="fixed-top">
+        <div>
+          <Header />
         </div>
+          <div className="card border-dark text-center mx-5 bg-transparent">
+          <form onSubmit={this.handleSubmit} className="card w-25">
+            <div className="card-header">
+              Find Your Nearest Center
+            </div>
+            <div className="card-body">
+              <label className="">Enter Zipcode:</label>
+              <input placeholder='Enter Zipcode' onChange={this.handleChange} value={this.state.zipcode} type="text" className="form-control" name="zipcode" id="zipcode" />
+              </div>
+            <div className="card-footer">
+              <button type="submit" className="btn btn-sm btn-success">Get Appointments</button>
+            </div>
+          </form>
+          </div>
         
         <div className="card border-dark text-center mx-5">
         <div className="card-header bg-primary text-light">

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import '../css/Background.css'
 
 class CreateAppointment extends Component {
 
@@ -61,20 +62,34 @@ class CreateAppointment extends Component {
     // const {distrib} = this.setState(resp.data);
     // console.log(this.state);
     return (
-      <div className="container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="mb-3 col-md-4">
-            <label htmlFor="day" className="form-label">Day:</label>
-            <input onChange={this.handleChange} value={this.state.appointment.date} type="date" className="form-control" name="date" id="day" />
+      <div id="background" className="fixed-top">
+        <br></br>
+        <br></br>
+        <div className="card text-center w-50 mx-auto">
+          <div className="card-header bg-primary text-light">
+            <h2>Create Appointment</h2>
           </div>
-          <div className="mb-3 col-md-4">
-            <label htmlFor="time" className="form-label">Time:</label>
-            <input onChange={this.handleChange} value={this.state.appointment.time} type="time" className="form-control" name="time" id="time" />
+          <div className="">
+              <div className="">
+              <form className="card-body mx-auto w-50" onSubmit={this.handleSubmit}>
+              <div className="py-4">
+                <label>Day:</label>
+                <input onChange={this.handleChange} value={this.state.appointment.date} type="date" className="form-control" name="date" id="day" />
+              </div>
+              <div className="py-4">
+                <label>Time:</label>
+                <input onChange={this.handleChange} value={this.state.appointment.time} type="time" className="form-control" name="time" id="time" />
+              </div>
+              <div className="py-4">
+                <button type="submit" className="btn btn-primary">Submit</button>
+              </div>
+              </form>
+              </div>
           </div>
-          <div className="mb-3 col-md-4">
-            <button type="submit" className="btn btn-primary">Submit</button>
-          </div>
-        </form>
+          
+        
+        </div>
+        
         {/* <Link to="/" className="btn btn-primary">Main</Link> */}
       </div>
     );

@@ -45,9 +45,11 @@ class PatientRegistration extends Component {
 
   render() {
     return (
-      <div id="pat-registration">
-        <form onSubmit={this.handleSubmit} className="needs-validation" id="pat-registration-form" noValidate>
-        <h1 style={{marginBottom: '60px'}}>Patient Registration Form</h1>
+      <div id="pat-registration" className="fixed-top">
+      <br></br>  
+        <div className="card w-50 mx-auto">
+        <h1 style={{marginBottom: '60px'}} className="card-header text-light bg-primary">Patient Registration Form</h1>
+        <form onSubmit={this.handleSubmit} className="text-dark" id="pat-registration-form" noValidate>
           <div className="mb-3 col-md-4">
             <label htmlFor="firstName" className="form-label">First name: </label>
             <input onChange={this.handleChange} value={this.state.patient.fname} type="text" className="form-control" id="fname" name="fname" required />
@@ -92,16 +94,18 @@ class PatientRegistration extends Component {
           <div className="mb-3 col-md-4">
             <label htmlFor="password" className="form-label">Password: </label>
             <input onChange={this.handleChange} value={this.state.patient.pass} type="password" className="form-control" id="password" name="pass" pattern=".{8,}" aria-describedby="passHelp" required />
-            <div id="passHelp" className="form-text">Password must be a minimum of 8 characters</div>
+            <div id="passHelp" className="form-text my-4">Password must be a minimum of 8 characters</div>
             <div className="invalid-feedback">
               Please provide a valid password.
             </div>
           </div>
-          <div className="mb-3 col-12">
+          <div className="card-footer mb-3 col-12">
             <button className="btn btn-primary" type="submit" style={{marginRight: '30px'}}>Submit form</button>
             <Link to="/" className="btn btn-primary" style={{marginRight: '30px'}}>Main</Link>
           </div>
         </form>
+        </div>
+        
       </div>
     );
   }
