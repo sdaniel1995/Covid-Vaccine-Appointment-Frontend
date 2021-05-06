@@ -24,6 +24,22 @@ class PatientProfile extends Component {
       })
   }
 
+  cancelAppointment = (event) => {
+    event.preventDefault();
+    console.log("Cancelled Appointment")
+    console.log(event.target.name);
+    const twoNumbers = [event.target.name]
+    axios.post('http://localhost:8081/api/appointments/cancel', twoNumbers)
+      .then(response => {
+        alert("Appointment Successfully Cancelled ");
+        this.props.history.push('PatientProfile');
+      })
+      .catch(error => {
+        alert('failed to log in');
+        //display error message
+      })
+  }
+
   render() {
     const { appts } = this.state;
 
@@ -58,7 +74,7 @@ class PatientProfile extends Component {
                           <td>{appt.distributor.distributorName}</td>
                           <td>{appt.distributor.address}</td>
                           <td>{appt.distributor.zipcode}</td>
-                          <td><button className="btn btn-danger m-2">Cancel</button></td>
+                          <td><button className="btn btn-danger m-2" name={appt.id} onClick={this.cancelAppointment}>Cancel</button></td>
                       </tr>
                   )
                   :null
