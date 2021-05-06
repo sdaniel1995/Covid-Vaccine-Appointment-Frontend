@@ -1,0 +1,51 @@
+#homepage {
+    background-image: url('../images/vaccine.jpg');
+    background-size: cover;
+    color: white;
+    font-family: Arial;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    display: table-cell;
+    vertical-align: middle;
+ }
+
+ #patient-registration:hover {transform: scale(1.1);}
+
+  /*#patient-registration {
+    background: transparent;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom: 2px solid white;
+  }*/
+
+ #dist-registration:hover {transform: scale(1.2);}
+
+  /*#dist-registration {
+    background: transparent;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom: 2px solid white;
+  }*/
+
+  #patient-sign:hover {transform: scale(1.1)}
+
+  /*#patient-sign {
+    background: transparent;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom: 2px solid white;
+  }*/
+
+  #dist-sign:hover {transform: scale(1.1)}
+
+  /*#dist-sign {
+    background: transparent;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom: 2px solid white;
+  }*/
