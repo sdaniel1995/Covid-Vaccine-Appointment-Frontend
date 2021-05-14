@@ -1,5 +1,6 @@
 # Prerequisites
    - Download [node.js](https://nodejs.org/en/download/) 
+   - Download [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
    
 # Getting Started
 
