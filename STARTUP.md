@@ -1,6 +1,6 @@
 # Prerequisites
-   - Download [node.js](https://nodejs.org/en/download/) 
-   - Download [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+   - Have node.js installed. Click the link for instructions on installation [node.js](https://nodejs.org/en/download/).
+   - Have git installed. Click the lik for instructions on installation [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
    
 # Getting Started
 
