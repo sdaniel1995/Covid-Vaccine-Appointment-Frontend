@@ -1,9 +1,9 @@
 # Prerequisites
    - Have node.js installed. Click the link for instructions on installation ([node.js](https://nodejs.org/en/download/).)
    - Have git installed. Click the lik for instructions on installation ([git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)).
+   - Git clone the backend repositiory to local machine. Run this command after installation of git - `git clone https://github.com/sdaniel1995/Covid-Vaccine-Appointment-Backend.git'
    
 # Getting Started
-
 To edit  and use the code do a `git clone https://github.com/sdaniel1995/Covid-Vaccine-Appointment-Frontend.git` in the terminal inside the the file folder directory on you local machine where you want the code cloned to.
 - Open VS Code and open the folder.
 - Run the following command: 
