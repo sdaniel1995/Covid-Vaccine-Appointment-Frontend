@@ -1,5 +1,5 @@
 # Geting Started
-To edit the code do a `git clone https://github.com/javatures/Portfolio-Frontend.git` in gitbash inside the the file folder directory on you local machine where you want the code cloned to.
+To edit  and use the code do a `git clone https://github.com/sdaniel1995/Covid-Vaccine-Appointment-Frontend.git` in the terminal inside the the file folder directory on you local machine where you want the code cloned to.
 - Open VS Code and open the folder.
 - Run the following command: 
     - `npm install (in a package directory, no arguments)`
